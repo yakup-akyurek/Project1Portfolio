@@ -1,0 +1,58 @@
+﻿@model List<Project1Portfolio.Models.Message >
+@{
+    ViewBag.Title = "Inbox";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2 class="mb-4">Gelen mesajlar</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Gönderen</th>
+        <th>Konu</th>
+        <th>Tarih</th>
+        <th>Kategori</th>
+        <th>Durum</th>
+        <th>Sil</th>
+        <th>Mesajı aç</th>
+
+
+
+
+    </tr>
+
+    @foreach ( var item in Model)
+            {
+                <tr>
+                    <td>@item.MessageId</td>
+                    <td>@item.Name</td>
+                    <td>@item.Subject</td>
+                    <td>@item.SendDate</td>
+                    <td>@item.Category.CategoryName</td>
+                    @if (item.IsRead == false)
+                    {
+                        <td><a href=" #" class="btn btn-info">okundu olarak işaretle</a></td>
+                    }
+                    else
+                    {
+                        <td><a href=" #" class="btn btn-warning">okunmadı olarak işaretle</a></td>
+
+                    }
+
+                    <td><a href="#" class="btn btn-danger">sil</a></td>
+                    <td><a href="#" class="btn btn-secondary">mesajı aç</a></td>
+
+
+
+
+
+
+
+                </tr>
+            }
+
+
+
+</table>
+
