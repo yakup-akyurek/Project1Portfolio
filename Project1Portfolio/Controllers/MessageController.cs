@@ -23,6 +23,20 @@ namespace Project1Portfolio.Controllers
             var value = context.Message.Where(x=>x.MessageId==id).FirstOrDefault();
             return View(value);
         }
+        public ActionResult MessageStatusChangeToTrue(int id) 
+        {
+            var value = context.Message.Where(x=> x.MessageId==id).FirstOrDefault();
+            value.IsRead = true;
+            context.SaveChanges();
+            return RedirectToAction("Inbox");
+        }
+        public ActionResult MessageStatusChangeToFalse(int id)
+        {
+            var value = context.Message.Where(x => x.MessageId == id).FirstOrDefault();
+            value.IsRead = false;
+            context.SaveChanges();
+            return RedirectToAction("Inbox");
+        }
 
     }
 }

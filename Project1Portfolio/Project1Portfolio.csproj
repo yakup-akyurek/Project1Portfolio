@@ -377,6 +377,7 @@
     <Content Include="Views\Skill\SkillList.cshtml" />
     <Content Include="Views\Skill\CreateSkill.cshtml" />
     <Content Include="Views\Message\Inbox.cshtml" />
+    <Content Include="Views\Message\MessageDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

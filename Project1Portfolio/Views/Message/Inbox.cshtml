@@ -32,16 +32,16 @@
                     <td>@item.Category.CategoryName</td>
                     @if (item.IsRead == false)
                     {
-                        <td><a href=" #" class="btn btn-info">okundu olarak işaretle</a></td>
+                        <td><a href=" /Message/MessageStatusChangeToTrue/@item.MessageId" class="btn btn-info">okundu olarak işaretle</a></td>
                     }
                     else
                     {
-                        <td><a href=" #" class="btn btn-warning">okunmadı olarak işaretle</a></td>
+                        <td><a href=" /Message/MessageStatusChangeToFalse/@item.MessageId" class="btn btn-warning">okunmadı olarak işaretle</a></td>
 
                     }
 
                     <td><a href="#" class="btn btn-danger">sil</a></td>
-                    <td><a href="#" class="btn btn-secondary">mesajı aç</a></td>
+                    <td><a href="/Message/MessageDetails/@item.MessageId" class="btn btn-secondary">mesajı aç</a></td>
 
 
 
