@@ -1,0 +1,40 @@
+﻿@model List<Project1Portfolio.Models.Experience>
+
+@{
+    ViewBag.Title = "ExperienceList";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2 class="mb-4">Deneyimlerim Listesi</h2>
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>ıd</th>
+        <th>şirket</th>
+        <th>Tarih</th>
+        <th>unvan</th>
+        <th>açıklama</th>
+        <th>sil</th>
+        <th>güncelle</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ExperienceId</td>
+            <td>@item.CompanyName</td>
+            <td>@item.WorkDate</td>
+            <td>@item.Title</td>
+            <td>@item.Description</td>
+            <td><a href="/Experience/DeleteExperience/@item.ExperienceId" class="btn btn-danger">sil</a></td>
+            <td><a href="/Experience/UpdateExperience/@item.ExperienceId" class="btn btn-success">güncelle</a></td>
+
+        </tr>
+
+    }
+
+
+</table>
+<a href="/Experience/CreateExperience/" class="btn btn-info">yeni deneyim girişi</a>
+

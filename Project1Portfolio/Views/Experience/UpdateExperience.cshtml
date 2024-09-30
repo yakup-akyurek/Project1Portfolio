@@ -1,0 +1,28 @@
+﻿@model Project1Portfolio.Models.Experience
+@{
+    ViewBag.Title = "UpdateExperience";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2 class="mb-4">deneyim güncelleme sayfası</h2>
+
+<form method="post">
+
+    @Html.HiddenFor(x=>x.ExperienceId,new {@class= "form-control"})
+
+    <label>şirket adı</label>
+    @Html.TextBoxFor(x=> x.CompanyName, new { @class = "form-control" })
+    
+    <label>iş tarihi</label>
+    @Html.TextBoxFor(x=> x.WorkDate, new { @class = "form-control" })
+    <br />
+    <label>unvan</label>
+    @Html.TextBoxFor(x=> x.Title, new { @class = "form-control" })
+    <br />
+    <label>açıklama</label>
+    @Html.TextAreaFor(x=> x.Description, 6, 0, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Deneyim güncelle</button>
+
+
+</form>
