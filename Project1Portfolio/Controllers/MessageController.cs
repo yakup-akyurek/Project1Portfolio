@@ -10,7 +10,7 @@ namespace Project1Portfolio.Controllers
     public class MessageController : Controller
     {
         // GET: Message
-        MyPortfolioDbEntities context = new MyPortfolioDbEntities();
+        MyPortfolioDbEntities1 context = new MyPortfolioDbEntities1();
         public ActionResult Inbox()
         {
             var values = context.Message.ToList();

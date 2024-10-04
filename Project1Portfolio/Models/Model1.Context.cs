@@ -13,10 +13,10 @@ namespace Project1Portfolio.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MyPortfolioDbEntities : DbContext
+    public partial class MyPortfolioDbEntities1 : DbContext
     {
-        public MyPortfolioDbEntities()
-            : base("name=MyPortfolioDbEntities")
+        public MyPortfolioDbEntities1()
+            : base("name=MyPortfolioDbEntities1")
         {
         }
     

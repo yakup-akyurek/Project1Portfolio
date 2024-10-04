@@ -10,7 +10,7 @@ namespace Project1Portfolio.Controllers
     public class SkillController : Controller
     {
         // GET: Skill
-        MyPortfolioDbEntities context = new MyPortfolioDbEntities();
+        MyPortfolioDbEntities1 context = new MyPortfolioDbEntities1();
         public ActionResult SkillList()
         {
             var values = context.Skill.ToList();

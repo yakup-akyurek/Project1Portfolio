@@ -269,8 +269,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
       <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -382,13 +382,6 @@
     <Content Include="Content\sidebar-01\scss\bootstrap\_utilities.scss" />
     <Content Include="Content\sidebar-01\scss\bootstrap\_variables.scss" />
     <Content Include="Content\sidebar-01\scss\style.scss" />
-    <EntityDeploy Include="Models\Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Content>
     <Content Include="Content\Pigra-1.0.0\img\Thumbs.db" />
     <Content Include="Content\Pigra-1.0.0\lib\owlcarousel\LICENSE" />
     <Content Include="Content\Pigra-1.0.0\scss\bootstrap.scss" />
@@ -473,6 +466,13 @@
     <Content Include="Content\Pigra-1.0.0\scss\bootstrap\scss\_type.scss" />
     <Content Include="Content\Pigra-1.0.0\scss\bootstrap\scss\_utilities.scss" />
     <Content Include="Content\Pigra-1.0.0\scss\bootstrap\scss\_variables.scss" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -518,6 +518,10 @@
     <Content Include="Views\Default\PartialNavBar.cshtml" />
     <Content Include="Views\Default\PartialHeader.cshtml" />
     <Content Include="Views\Default\PartialAbout.cshtml" />
+    <Content Include="Views\Default\PartialEducation.cshtml" />
+    <Content Include="Views\Default\PartialExperience.cshtml" />
+    <Content Include="Views\Default\PartialSkills.cshtml" />
+    <Content Include="Views\Default\PartialScript.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -9,22 +9,22 @@ namespace Project1Portfolio.Controllers
 {
     public class DefaultController : Controller
     {
-        MyPortfolioDbEntities context= new MyPortfolioDbEntities();
+        MyPortfolioDbEntities1 context = new MyPortfolioDbEntities1();
         // GET: Default
         public ActionResult Index()
         {
             return View();
         }
-        public ActionResult PartialHead()
+        public PartialViewResult PartialHead()
         {
             return PartialView();
         }
 
-        public ActionResult PartialNavBar() 
+        public PartialViewResult PartialNavBar() 
         {
             return PartialView();        
         }
-        public ActionResult PartialHeader() 
+        public PartialViewResult PartialHeader() 
         {
             ViewBag.title=context.About.Select(a => a.Title).FirstOrDefault();
             ViewBag.detail=context.About.Select(a => a.Detail).FirstOrDefault();
@@ -37,7 +37,7 @@ namespace Project1Portfolio.Controllers
 
             return PartialView();
         }
-        public ActionResult PartialAbout() 
+        public PartialViewResult PartialAbout() 
         {
             ViewBag.title=context.Profile.Select(x=>x.Title).FirstOrDefault();
             ViewBag.description=context.Profile.Select(x=>x.Description).FirstOrDefault();
@@ -46,6 +46,27 @@ namespace Project1Portfolio.Controllers
             ViewBag.imageUrl=context.Profile.Select(x=>x.ImageUrl).FirstOrDefault();
             return PartialView();
         }
+
+        public PartialViewResult PartialEducation() 
+        {
+            var values = context.Education.ToList();
+            return PartialView(values);
+        }
+        public PartialViewResult PartialExperience() 
+        {
+            var values = context.Experience.ToList();
+            return PartialView(values);
+        }
+        public PartialViewResult PartialSkills() 
+        {
+            var values = context.Skill.ToList();
+            return PartialView(values);
+        }
+        public PartialViewResult PartialScript() 
+
+        {
+            return PartialView();
+        } 
     }
     
     

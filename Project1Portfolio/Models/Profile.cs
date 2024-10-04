@@ -21,7 +21,7 @@ namespace Project1Portfolio.Models
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
         public string Github { get; set; }
-        public byte[] ImageUrl { get; set; }
+        public string ImageUrl { get; set; }
         public string MapLocation { get; set; }
     }
 }

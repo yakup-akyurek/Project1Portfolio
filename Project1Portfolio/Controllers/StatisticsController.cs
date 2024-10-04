@@ -9,7 +9,7 @@ namespace Project1Portfolio.Controllers
 {
     public class StatisticsController : Controller
     {
-        MyPortfolioDbEntities context= new MyPortfolioDbEntities();
+        MyPortfolioDbEntities1 context = new MyPortfolioDbEntities1();
         // GET: Statistics
         public ActionResult Index()
         {

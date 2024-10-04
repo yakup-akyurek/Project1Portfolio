@@ -10,7 +10,7 @@ namespace Project1Portfolio.Controllers
     public class ExperienceController : Controller
     {
         // GET: Experience
-        MyPortfolioDbEntities context = new MyPortfolioDbEntities();
+        MyPortfolioDbEntities1 context = new MyPortfolioDbEntities1();
         public ActionResult ExperienceList()
         {
             var values = context.Experience.ToList();

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="MyPortfolioDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="MyPortfolioDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="About">
           <Key>
             <PropertyRef Name="AboutId" />
@@ -12,7 +12,7 @@
           <Property Name="AboutId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Title" Type="nvarchar" MaxLength="250" />
           <Property Name="Detail" Type="nvarchar" MaxLength="1000" />
-          <Property Name="ImageUrl" Type="nchar" MaxLength="10" />
+          <Property Name="ImageUrl" Type="nchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -67,7 +67,7 @@
           <Property Name="Email" Type="varchar" MaxLength="30" />
           <Property Name="PhoneNumber" Type="varchar" MaxLength="30" />
           <Property Name="Github" Type="varchar" MaxLength="50" />
-          <Property Name="ImageUrl" Type="varbinary(max)" />
+          <Property Name="ImageUrl" Type="nchar" MaxLength="250" />
           <Property Name="MapLocation" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Service">
@@ -147,7 +147,8 @@
             <End Role="Message" EntitySet="Message" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MyPortfolioDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -158,7 +159,7 @@
           <Property Name="AboutId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="Detail" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Name="ImageUrl" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ImageUrl" Type="String" MaxLength="250" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -166,8 +167,8 @@
           </Key>
           <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Message" Relationship="Self.FK_Message_Category" FromRole="Category" ToRole="Message" />
           <Property Name="CategoryStatus" Type="Boolean" />
+          <NavigationProperty Name="Message" Relationship="Self.FK_Message_Category" FromRole="Category" ToRole="Message" />
         </EntityType>
         <EntityType Name="Education">
           <Key>
@@ -215,7 +216,7 @@
           <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="PhoneNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Github" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ImageUrl" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="ImageUrl" Type="String" MaxLength="250" FixedLength="true" Unicode="true" />
           <Property Name="MapLocation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Service">
@@ -278,7 +279,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="MyPortfolioDbEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="MyPortfolioDbEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="About" EntityType="Self.About" />
           <EntitySet Name="Category" EntityType="Self.Category" />
           <EntitySet Name="Education" EntityType="Self.Education" />
@@ -300,7 +301,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="MyPortfolioDbModelStoreContainer" CdmEntityContainer="MyPortfolioDbEntities">
+        <EntityContainerMapping StorageEntityContainer="MyPortfolioDbModelStoreContainer" CdmEntityContainer="MyPortfolioDbEntities1">
           <EntitySetMapping Name="About">
             <EntityTypeMapping TypeName="MyPortfolioDbModel.About">
               <MappingFragment StoreEntitySet="About">
@@ -314,9 +315,9 @@
           <EntitySetMapping Name="Category">
             <EntityTypeMapping TypeName="MyPortfolioDbModel.Category">
               <MappingFragment StoreEntitySet="Category">
-                <ScalarProperty Name="CategoryStatus" ColumnName="CategoryStatus" />
                 <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
                 <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="CategoryStatus" ColumnName="CategoryStatus" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
