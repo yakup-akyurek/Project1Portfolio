@@ -66,7 +66,16 @@ namespace Project1Portfolio.Controllers
 
         {
             return PartialView();
-        } 
+        }
+
+        public PartialViewResult PartialSocialMedia() 
+        {
+            var values = context.SocialMedia.Where(x=>x.Status==true).ToList();
+            return PartialView(values);
+
+        }
+
+        
     }
     
     
