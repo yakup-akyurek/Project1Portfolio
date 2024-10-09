@@ -12,8 +12,25 @@ namespace Project1Portfolio.Controllers
         MyPortfolioDbEntities1 context = new MyPortfolioDbEntities1();
         // GET: Default
         public ActionResult Index()
-        {
+        {   //kullanıcının hangi kategoride gönderim yapabileceğini seçtirdik. kullanıcıya isim gitti biz ıd üzerinden çektik
+            List<SelectListItem> values =(from x in context.Category.ToList()
+                                          select new SelectListItem
+                                          {
+                                              Text=x.CategoryName,
+                                              Value=x.CategoryId.ToString(),
+                                          }).ToList();
+            ViewBag.v=values;
             return View();
+        }
+        [HttpPost]
+        public ActionResult Index(Message message) 
+        {
+            //günümüz tarihinde gönderi yapmasını sağladık
+            message.SendDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+            message.IsRead = false;
+            context.Message.Add(message);
+            context.SaveChanges();
+            return RedirectToAction("Index");
         }
         public PartialViewResult PartialHead()
         {
