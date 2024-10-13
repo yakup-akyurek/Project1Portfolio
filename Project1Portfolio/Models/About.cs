@@ -18,5 +18,7 @@ namespace Project1Portfolio.Models
         public string Title { get; set; }
         public string Detail { get; set; }
         public string ImageUrl { get; set; }
+        public Nullable<bool> Status { get; set; }
+        public string LeftTitle { get; set; }
     }
 }

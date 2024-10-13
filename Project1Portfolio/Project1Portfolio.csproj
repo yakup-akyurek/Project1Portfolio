@@ -128,14 +128,19 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ChartsController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\EducationController.cs" />
     <Compile Include="Controllers\ExperienceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Controllers\PortfolioController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Controllers\SkillController.cs" />
     <Compile Include="Controllers\StatisticsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -222,6 +227,8 @@
     <Content Include="Content\Pigra-1.0.0\img\blog-3.jpg" />
     <Content Include="Content\Pigra-1.0.0\img\blog-4.jpg" />
     <Content Include="Content\Pigra-1.0.0\img\header-img.jpg" />
+    <Content Include="Content\Pigra-1.0.0\img\IMG-20241013-WA0004.jpg" />
+    <Content Include="Content\Pigra-1.0.0\img\IMG-20241013-WA0006.jpg" />
     <Content Include="Content\Pigra-1.0.0\img\Portfolio-1.jpg" />
     <Content Include="Content\Pigra-1.0.0\img\portfolio-2.jpg" />
     <Content Include="Content\Pigra-1.0.0\img\portfolio-3.jpg" />
@@ -480,7 +487,10 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <Content Include="Content\CV\COURSE.pdf" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
+    <Content Include="Scripts\chart.js" />
+    <Content Include="Scripts\chart.min.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
     <Content Include="Scripts\jquery-3.7.0.slim.js" />
@@ -536,9 +546,22 @@
     <Content Include="Views\Default\PartialTestimonial.cshtml" />
     <Content Include="Views\Default\PartialPortfolio.cshtml" />
     <Content Include="Views\Default\PartialService.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\About\CreateAbout.cshtml" />
+    <Content Include="Views\About\UpdateAbout.cshtml" />
+    <Content Include="Views\Chart\GetSkills.cshtml" />
+    <Content Include="Views\Profile\Index.cshtml" />
+    <Content Include="Views\Profile\UpdateProfile.cshtml" />
+    <Content Include="Views\Service\ServiceList.cshtml" />
+    <Content Include="Views\Service\CreateService.cshtml" />
+    <Content Include="Views\Service\UpdateService.cshtml" />
+    <Content Include="Views\Portfolio\PortfolioList.cshtml" />
+    <Content Include="Views\Portfolio\CreatePortfolio.cshtml" />
+    <Content Include="Views\Portfolio\UpdatePortfolio.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Charts\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

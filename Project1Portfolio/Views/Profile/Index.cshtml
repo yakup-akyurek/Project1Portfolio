@@ -1,0 +1,35 @@
+﻿@model List<Project1Portfolio.Models.Profile>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2>Profil Bilgilerim</h2>
+<br />
+<table class="table table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Açıklama/Ad Soyad</th>
+        <th>Adres</th>
+        <th>E-Mail</th>
+        <th>Telefon</th>
+        <th>GitHub</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ProfileId</td>
+            <td>@item.Description</td>
+            <td>@item.Address</td>
+            <td>@item.Email</td>
+            <td>@item.PhoneNumber</td>
+            <td><a href="https://github.com/yakup-akyurek" target="_blank">@item.Github</a></td>
+            <td><a href="/Profile/DeleteProfile/@item.ProfileId/" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Profile/UpdateProfile/@item.ProfileId/" class="btn btn-outline-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+
+
